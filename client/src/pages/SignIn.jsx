@@ -30,10 +30,10 @@ function SignIn() {
       });
       const data = await res.json();
       if (data.success === false) {
-      return   dispatch(signInFailure(data.message));
+        return dispatch(signInFailure(data.message));
       }
       if (res.ok) {
-          dispatch(signInSuccess(data))
+        dispatch(signInSuccess(data));
         navigate("/");
       }
     } catch (error) {
